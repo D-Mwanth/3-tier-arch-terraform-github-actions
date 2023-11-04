@@ -54,5 +54,9 @@ Format the configureation file and initiate to buckent to be established. Confir
 
 Now with terraform project state intialized and backend set as s3, we can now make our initial commit and push to the github repo.
 
+For development purpose we are only using the main branch, this wont be the case in production scenario but for development purpose, this will be the case in production settings as you will need to use branching and execute on merge to main branch for deployment.
+
+Now, what we plan to do here is to deploy a 3-tier application architecute usign github actions and terrafrom on AWS cloud.
+
 
 
