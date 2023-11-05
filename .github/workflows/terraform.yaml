@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: list files
+        run: ls
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
@@ -38,5 +40,5 @@ jobs:
         id: plan
         run: terraform plan -no-color
 
-      - name: Terraform Apply
-        run: terraform destroy -auto-approve
+      # - name: Terraform Apply
+      #   run: terraform apply -auto-approve
