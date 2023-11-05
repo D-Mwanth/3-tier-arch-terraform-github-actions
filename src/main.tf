@@ -7,6 +7,7 @@ terraform {
     dynamodb_table = "terraform-state-locking"
     encrypt        = true
   }
+  
   # delcare required provider and there version
   required_providers {
     aws = {
