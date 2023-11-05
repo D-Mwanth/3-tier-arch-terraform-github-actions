@@ -32,5 +32,3 @@ resource "aws_dynamodb_table" "terraform_locks" {
     type = "S"
   }
 }
-
-# how to make sure terraform destroy does does not delete these resources for we need to be able to reuse them once again and again.

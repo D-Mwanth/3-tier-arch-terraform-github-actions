@@ -40,7 +40,7 @@ You can log in to aws console and verify your resources were provisioned.
 
 ### How to create infrustructure in multiple enviroments (dev, test, prod)
 
-- The infrusture we just created, terraform is using local backent. This not what we want, we need to store our environ state in s3. So we add s3 as our backend inside the terraform block.
+- The infrusture we just created, terraform is using local backend. This not what we want, we need to store our environ state in s3. So we add s3 as our backend inside the terraform block.
 
 ```bash
     bucket         = "mwan-daniel-tf-state-backen-ci-cd"
@@ -51,7 +51,7 @@ You can log in to aws console and verify your resources were provisioned.
   }
 ```
 
-Format the configureation file and initiate to buckent to be established. Confirm with yes to copy the state into the new backend.
+Format the configureation file and `initiate` to buckent to be established. Confirm with `yes` to copy the state into the new backend.
 - Then apply for the changes.
 - Nothing will be created. All that will happen is that the local state will be copied to the cloud backend.
 
@@ -85,4 +85,8 @@ Recursively check incase you are working with modules.
 terraform fmt -check -recursive
 ```
 
+```bash
+# create bucket first and then set it as a backend: terraform apply, this time the backend block was commented out
+# set backend: set backent init and apply again, also copy the state to the backet, uncomment the backend block
+```
 
