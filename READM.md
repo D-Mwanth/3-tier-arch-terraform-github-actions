@@ -1,7 +1,10 @@
-### Automating 3-tier infrastructure provisionig with Terraform and AWS using Github Actions
+### Infrastructire as Code: Automating 3-tier application infrastructure deployment/provisionig with Terraform and AWS using Github Actions with self-hosted runners
+
+`Infrastructire as Code: Automating 3-Tier Application Infrastructure Deployment with Terraform, AWS, and GitHub Actions with Self-Hosted Runners`
 
 Infrastructure provisioning using Terraform on AWS.
 
+Using self `hosted-runner`
 ## Establishing remote state storage
 - Create github repo where to base your infra provisioning code.
 - Clone this Repo
@@ -58,6 +61,28 @@ For development purpose we are only using the main branch, this wont be the case
 
 Now, what we plan to do here is to deploy a 3-tier application architecute usign github actions and terrafrom on AWS cloud.
 
+### Large files push problem resolved:
+```bash
+$ pip install --user git-filter-repo
+$ git filter-repo --path src/.terraform/providers/registry.terraform.io/hashicorp/aws/5.24.0/linux_amd64/terraform-provider-aws_v5.24.0_x5 --invert-paths --force
+$ git push
+```
 
+### Now we need to create a vpc module inside the modules file
+- Create a directory name it, `vpc`
+- Inside this folder create `main.tf` file and add the following blocks:
+    - terraform block
+- The create another file and call it `vpc.tf`. In this file add the resources to create vpc and it components for complete network resilence.
+
+
+Once added the vpc module and passed the required inputs, run terraform init to pick up the new module.
+Check if a config file is formated correctly:
+```bash
+terraform fmt -check
+```
+Recursively check incase you are working with modules.
+```bash
+terraform fmt -check -recursive
+```
 
 
